@@ -1,4 +1,4 @@
-class MyLL {
+public class MyLL {
  
 	private static int numInList;
 	private Node head;
