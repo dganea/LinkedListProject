@@ -1,38 +1,42 @@
 public class TestList {
-	public static MyLL studentList;
+	public static MyLL theLL;
  
 	public static void main(String[] args) {
- 
-		// Default constructor - let's put "0" into head element.
-		studentList = new MyLL();
+
+		MyLL theLL = new MyLL();
 
 
 		// initialize students
-		StudentInfo harry = new StudentInfo(1,"Harry","Potter");
+		StudentInfo beter = new StudentInfo(1,"Peter","Lu");
+		theLL.addToRear(beter);
+
 		StudentInfo ron = new StudentInfo(2,"Ron","Weasley");
+		theLL.addToRear(ron);
+
 		StudentInfo hermione = new StudentInfo(3,"Hermione","Granger");
+		theLL.addToRear(hermione);
+
 		StudentInfo neville = new StudentInfo(4,"Neville","Longbottom");
+		theLL.addToRear(neville);
+
 		StudentInfo luna = new StudentInfo(5,"Luna","Lovegood");
+		theLL.addToRear(luna);
  
 		// add more elements to LinkedList
-		studentList.addToRear(harry);
-		studentList.addToRear(ron);
-		studentList.addToRear(hermione);
-		studentList.addToRear(neville);
-		studentList.addToRear(luna);
- 
+	
+		
 		/*
 		 * Please note that primitive values can not be added into LinkedList directly. They must be converted to their
 		 * corresponding wrapper class.
 		 */
  
-		System.out.println("Print: studentList: \n" + studentList);
-		System.out.println("Student List Size: \t\t\t\t" + studentList.size());
-		//System.out.println(".get(3): \t\t\t\t" + studentList.get(3) + " (get element at index:3 - list starts from 0)");
-		System.out.println(".remove(2): \t\t\t\t" + studentList.remove(2) + " (element removed)");
-		//System.out.println(".get(3): \t\t\t\t" + studentList.get(3) + " (get element at index:3 - list starts from 0)");
-		//System.out.println(".size(): \t\t\t\t" + studentList.size());
-		System.out.println("Print again: studentList: \n" + studentList);
+		System.out.println("Print: theLL: \n" + theLL);
+		System.out.println("Student List Size: \t\t\t\t" + theLL.size());
+		//System.out.println(".get(3): \t\t\t\t" + theLL.get(3) + " (get element at index:3 - list starts from 0)");
+		System.out.println(".remove(2): \t\t\t\t" + theLL.remove(2) + " (element removed)");
+		//System.out.println(".get(3): \t\t\t\t" + theLL.get(3) + " (get element at index:3 - list starts from 0)");
+		//System.out.println(".size(): \t\t\t\t" + theLL.size());
+		System.out.println("Print again: theLL: \n" + theLL);
 	}
  
 }

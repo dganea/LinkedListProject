@@ -1,34 +1,35 @@
 public class MyLL {
  
-	private static int numInList;
-	private Node head;
+	public static int numInList;
+	public Node frontOfList;
  
 	// Default constructor
 	public MyLL() {
- 
+		numInList = 0;
+		frontOfList = null;
 	}
  
 	// appends the specified element to the end of this list.
 	public void addToRear(Object data) {
  
 		// Initialize Node only incase of 1st element
-		if (head == null) {
-			head = new Node(data);
+		if (frontOfList == null) {
+			frontOfList = new Node(data);
 		}
  
 		Node studentTemp = new Node(data);
-		Node studentCurrent = head;
+		Node studentCurrent = frontOfList;
  
 		// Let's check for NPE before iterate over studentCurrent
 		if (studentCurrent != null) {
  
-			// starting at the head node, crawl to the end of the list and then add element after last node
-			while (studentCurrent.getNext() != null) {
-				studentCurrent = studentCurrent.getNext();
+			// starting at the frontOfList node, crawl to the end of the list and then add element after last node
+			while (studentCurrent.getfrontOfList() != null) {
+				studentCurrent = studentCurrent.getfrontOfList();
 			}
  
-			// the last node's "next" reference set to our new node
-			studentCurrent.setNext(studentTemp);
+			// the last node's "frontOfList" reference set to our new node
+			studentCurrent.setfrontOfList(studentTemp);
 		}
  
 		// increment the number of elements variable
@@ -50,21 +51,21 @@ public class MyLL {
 	// inserts the specified element at the specified position in this list
 	public void add(Object data, int index) {
 		Node studentTemp = new Node(data);
-		Node studentCurrent = head;
+		Node studentCurrent = frontOfList;
  
 		// Let's check for NPE before iterate over studentCurrent
 		if (studentCurrent != null) {
 			// crawl to the requested index or the last element in the list, whichever comes first
-			for (int i = 0; i < index && studentCurrent.getNext() != null; i++) {
-				studentCurrent = studentCurrent.getNext();
+			for (int i = 0; i < index && studentCurrent.getfrontOfList() != null; i++) {
+				studentCurrent = studentCurrent.getfrontOfList();
 			}
 		}
  
-		// set the new node's next-node reference to this node's next-node reference
-		studentTemp.setNext(studentCurrent.getNext());
+		// set the new node's frontOfList-node reference to this node's frontOfList-node reference
+		studentTemp.setfrontOfList(studentCurrent.getfrontOfList());
  
-		// now set this node's next-node reference to the new node
-		studentCurrent.setNext(studentTemp);
+		// now set this node's frontOfList-node reference to the new node
+		studentCurrent.setfrontOfList(studentTemp);
  
 		// increment the number of elements variable
 		incrementnumInList();
@@ -77,13 +78,13 @@ public class MyLL {
 		if (index < 0)
 			return null;
 		Node studentCurrent = null;
-		if (head != null) {
-			studentCurrent = head.getNext();
+		if (frontOfList != null) {
+			studentCurrent = frontOfList.getfrontOfList();
 			for (int i = 0; i < index; i++) {
-				if (studentCurrent.getNext() == null)
+				if (studentCurrent.getfrontOfList() == null)
 					return null;
  
-				studentCurrent = studentCurrent.getNext();
+				studentCurrent = studentCurrent.getfrontOfList();
 			}
 			return studentCurrent.getData();
 		}
@@ -98,15 +99,15 @@ public class MyLL {
 		if (index < 1 || index > size())
 			return false;
  
-		Node studentCurrent = head;
-		if (head != null) {
+		Node studentCurrent = frontOfList;
+		if (frontOfList != null) {
 			for (int i = 0; i < index; i++) {
-				if (studentCurrent.getNext() == null)
+				if (studentCurrent.getfrontOfList() == null)
 					return false;
  
-				studentCurrent = studentCurrent.getNext();
+				studentCurrent = studentCurrent.getfrontOfList();
 			}
-			studentCurrent.setNext(studentCurrent.getNext().getNext());
+			studentCurrent.setfrontOfList(studentCurrent.getfrontOfList().getfrontOfList());
  
 			// decrement the number of elements variable
 			decrementnumInList();
@@ -124,11 +125,11 @@ public class MyLL {
 	public String toString() {
 		String output = "";
  
-		if (head != null) {
-			Node studentCurrent = head.getNext();
+		if (frontOfList != null) {
+			Node studentCurrent = frontOfList.getfrontOfList();
 			while (studentCurrent != null) {
 				output += studentCurrent.getData().toString() + "\n\n";
-				studentCurrent = studentCurrent.getNext();
+				studentCurrent = studentCurrent.getfrontOfList();
 			}
  
 		}
@@ -136,22 +137,22 @@ public class MyLL {
 	}
  
 	private class Node {
-		// reference to the next node in the chain, or null if there isn't one.
-		Node next;
+		// reference to the frontOfList node in the chain, or null if there isn't one.
+		Node frontOfList;
  
 		// data carried by this node. could be of any type you need.
 		Object data;
  
 		// Node constructor
 		public Node(Object dataValue) {
-			next = null;
+			frontOfList = null;
 			data = dataValue;
 		}
  
 		// another Node constructor if we want to specify the node to point to.
 		@SuppressWarnings("unused")
-		public Node(Object dataValue, Node nextValue) {
-			next = nextValue;
+		public Node(Object dataValue, Node frontOfListValue) {
+			frontOfList = frontOfListValue;
 			data = dataValue;
 		}
  
@@ -165,12 +166,12 @@ public class MyLL {
 			data = dataValue;
 		}
  
-		public Node getNext() {
-			return next;
+		public Node getfrontOfList() {
+			return frontOfList;
 		}
  
-		public void setNext(Node nextValue) {
-			next = nextValue;
+		public void setfrontOfList(Node frontOfListValue) {
+			frontOfList = frontOfListValue;
 		}
  
 	}

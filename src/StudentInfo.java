@@ -1,9 +1,9 @@
 public class StudentInfo {
         // Instance Variables
-        int studentNum;
-        String firstName;
-        String lastName;
-        StudentInfo next;
+        public int studentNum;
+        public String firstName;
+        public String lastName;
+        public StudentInfo next;
 
     // Constructor Declaration of Class
     public StudentInfo(int studentNum, String firstName,
@@ -12,6 +12,7 @@ public class StudentInfo {
         this.studentNum = studentNum;
         this.firstName = firstName;
         this.lastName = lastName;
+        this.next = null;
     }
 
 
