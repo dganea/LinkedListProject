@@ -21,7 +21,7 @@ public class MyLL {
 			numInList = 1;
 			return;
 		}
-		
+
 		// At this point, the list has at least 1 element.
 		studentToAdd.next = frontOfList;
 		frontOfList = studentToAdd;
@@ -32,7 +32,7 @@ public class MyLL {
 	public void removeFromFront() {
 		frontOfList = frontOfList.next;
 		decrementnumInList();
-	}
+	} // end addToFront
 
 	// appends the specified element to the end of this list.
 	public void addToRear(StudentInfo studentToAdd) {
@@ -49,7 +49,7 @@ public class MyLL {
 				currentStudent = currentStudent.next;
 			}
 		}
-	}
+	} // end addToRear
 
 	public void removeFromRear() {
 		StudentInfo currentStudent = frontOfList;
@@ -68,7 +68,26 @@ public class MyLL {
 			}
 		}
 	}
- 
+
+	public void displayList() {
+		if (numInList == 0) {
+			System.out.println("There are no students in the list.");
+			return;
+		}
+		StudentInfo nextStudent = this.frontOfList;
+		while (nextStudent != null) {
+			System.out.println("The student number is " + nextStudent.studentNum);
+			System.out.println("The first name is " + nextStudent.firstName);
+			System.out.println("The last name is " + nextStudent.lastName);
+			System.out.println("The height is " + nextStudent.height);
+			System.out.println("The weight is " + nextStudent.weight);
+			System.out.println();
+
+			nextStudent = nextStudent.next;
+		}
+
+		System.out.println("There are " + numInList + " items in the list.");
+	}
 	private static int getnumInList() {
 		return numInList;
 	}
