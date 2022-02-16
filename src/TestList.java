@@ -5,38 +5,31 @@ public class TestList {
 
 		MyLL theLL = new MyLL();
 
+		StudentInfo someStudent;
 
 		// initialize students
-		StudentInfo beter = new StudentInfo(1,"Peter","Lu");
-		theLL.addToRear(beter);
+		someStudent = new StudentInfo(111111,"Daffy","Duck", 150.0, 56.0);
+		theLL.addToFront(someStudent);
 
-		StudentInfo ron = new StudentInfo(2,"Ron","Weasley");
-		theLL.addToRear(ron);
+		someStudent = new StudentInfo(222222,"Elmer","Fudd", 160.0, 48.0);
+		theLL.addToFront(someStudent);
 
-		StudentInfo hermione = new StudentInfo(3,"Hermione","Granger");
-		theLL.addToRear(hermione);
+		someStudent = new StudentInfo(333333,"Lola","Bunny", 200.0, 78.0);
+		theLL.addToFront(someStudent);
 
-		StudentInfo neville = new StudentInfo(4,"Neville","Longbottom");
-		theLL.addToRear(neville);
+		someStudent = new StudentInfo(4,"Archish","Sadeesh", 150.0, 108.0);
+		theLL.addToFront(someStudent);
 
-		StudentInfo luna = new StudentInfo(5,"Luna","Lovegood");
-		theLL.addToRear(luna);
- 
-		// add more elements to LinkedList
-	
+		someStudent = new StudentInfo(5,"Oliver","Wang", 160.0, 28.0);
+		theLL.addToFront(someStudent);
+
+		someStudent = new StudentInfo(6,"Abhinav","Balasubramanian", 190.0, 78.0);
+		theLL.addToFront(someStudent);
 		
 		/*
 		 * Please note that primitive values can not be added into LinkedList directly. They must be converted to their
 		 * corresponding wrapper class.
 		 */
- 
-		System.out.println("Print: theLL: \n" + theLL);
-		System.out.println("Student List Size: \t\t\t\t" + theLL.size());
-		//System.out.println(".get(3): \t\t\t\t" + theLL.get(3) + " (get element at index:3 - list starts from 0)");
-		System.out.println(".remove(2): \t\t\t\t" + theLL.remove(2) + " (element removed)");
-		//System.out.println(".get(3): \t\t\t\t" + theLL.get(3) + " (get element at index:3 - list starts from 0)");
-		//System.out.println(".size(): \t\t\t\t" + theLL.size());
-		System.out.println("Print again: theLL: \n" + theLL);
 	}
  
 }
