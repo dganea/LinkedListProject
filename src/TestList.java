@@ -6,7 +6,7 @@ public class TestList {
 		MyLL theLL = new MyLL();
 
 		StudentInfo someStudent;
-		
+		StudentInfo removedStudent;
 		theLL.displayList();
 
 		// initialize students
@@ -34,6 +34,14 @@ public class TestList {
 		theLL.addToFront(someStudent);
 		theLL.displayList();
 		
+		removedStudent = theLL.removeFromFront();
+		if (removedStudent == null) {
+			System.out.println("\nTried to remove from an empty list.");
+		}
+		else {
+			System.out.println("\nRemoved " + removedStudent.firstName + " from the front of the list.");
+			theLL.displayList();
+		}
 		/*
 		 * Please note that primitive values can not be added into LinkedList directly. They must be converted to their
 		 * corresponding wrapper class.

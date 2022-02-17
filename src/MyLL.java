@@ -70,24 +70,28 @@ public class MyLL {
 	}
 
 	public void displayList() {
-		if (numInList == 0) {
-			System.out.println("There are no students in the list.");
+		if (numInList <= 0) {
+			System.out.println("\nThe list is empty!\n");
 			return;
 		}
-		StudentInfo nextStudent = this.frontOfList;
-		while (nextStudent != null) {
-			System.out.println("\nThe student number is " + nextStudent.studentNum);
-			System.out.println("The first name is " + nextStudent.firstName);
-			System.out.println("The last name is " + nextStudent.lastName);
-			System.out.println("The height is " + nextStudent.height);
-			System.out.println("The weight is " + nextStudent.weight);
+
+		// At this point, we have a non-empty list.
+		System.out.println("\nHere is the list from front to rear.");
+		StudentInfo currentStudent = this.frontOfList;
+		while (currentStudent != null) {
+			System.out.println("\nThe student number is " + currentStudent.studentNum);
+			System.out.println("The first name is " + currentStudent.firstName);
+			System.out.println("The last name is " + currentStudent.lastName);
+			System.out.println("The height is " + currentStudent.height);
+			System.out.println("The weight is " + currentStudent.weight);
 			System.out.println();
 
-			nextStudent = nextStudent.next;
+			currentStudent = currentStudent.next;
 		}
 
 		System.out.println("There are " + numInList + " items in the list.");
 	}
+
 	private static int getnumInList() {
 		return numInList;
 	}
