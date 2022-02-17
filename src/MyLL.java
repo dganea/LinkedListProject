@@ -29,10 +29,21 @@ public class MyLL {
 		return;
 	}
 	
-	public void removeFromFront() {
+	// ************** ORIGINAl function ***************** //
+	// public void removeFromFront() {
+	// 	frontOfList = frontOfList.next;
+	// 	decrementnumInList();
+	// } // end removeFromFront
+
+
+	// ************** TAP's function ***************** //
+	public StudentInfo removeFromFront() {
+		StudentInfo tempStudent = frontOfList;
 		frontOfList = frontOfList.next;
 		decrementnumInList();
-	} // end addToFront
+		return tempStudent;
+	} // end removeFromFront
+
 
 	// appends the specified element to the end of this list.
 	public void addToRear(StudentInfo studentToAdd) {
