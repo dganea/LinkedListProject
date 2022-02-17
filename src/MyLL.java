@@ -76,7 +76,7 @@ public class MyLL {
 		}
 		StudentInfo nextStudent = this.frontOfList;
 		while (nextStudent != null) {
-			System.out.println("The student number is " + nextStudent.studentNum);
+			System.out.println("\nThe student number is " + nextStudent.studentNum);
 			System.out.println("The first name is " + nextStudent.firstName);
 			System.out.println("The last name is " + nextStudent.lastName);
 			System.out.println("The height is " + nextStudent.height);

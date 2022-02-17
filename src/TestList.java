@@ -22,15 +22,15 @@ public class TestList {
 		theLL.addToFront(someStudent);
 		theLL.displayList();
 
-		someStudent = new StudentInfo(4,"Archish","Sadeesh", 150.0, 108.0);
+		someStudent = new StudentInfo(444444,"Archish","Sadeesh", 150.0, 108.0);
 		theLL.addToFront(someStudent);
 		theLL.displayList();
 
-		someStudent = new StudentInfo(5,"Oliver","Wang", 160.0, 28.0);
+		someStudent = new StudentInfo(555555,"Oliver","Wang", 160.0, 28.0);
 		theLL.addToFront(someStudent);
 		theLL.displayList();
 
-		someStudent = new StudentInfo(6,"Abhinav","Balasubramanian", 190.0, 78.0);
+		someStudent = new StudentInfo(666666,"Abhinav","Balasubramanian", 190.0, 78.0);
 		theLL.addToFront(someStudent);
 		theLL.displayList();
 		
