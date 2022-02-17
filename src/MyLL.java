@@ -107,8 +107,6 @@ public class MyLL {
 
 	private static void decrementnumInList() {
 		numInList--;
-	}
-
-	
+	}	
 	
 }
