@@ -35,6 +35,10 @@ public class MyLL {
 	// 	decrementnumInList();
 	// } // end removeFromFront
 
+	public boolean isListEmpty() {
+			return (frontOfList == null || numInList <= 0);
+	} // end removeFromFront	
+
 
 	// ************** TAP's function ***************** //
 	public StudentInfo removeFromFront() {
@@ -62,14 +66,17 @@ public class MyLL {
 		}
 	} // end addToRear
 
-	public void removeFromRear() {
+	public StudentInfo removeFromRear() {
+		StudentInfo tempStudent = frontOfList;
 		StudentInfo currentStudent = frontOfList;
 		StudentInfo previousStudent = frontOfList;
+
 		for (int i = 0; i < numInList; i++) {
 			if (currentStudent.next == null) {
+				tempStudent = currentStudent;
 				previousStudent.next = null;
 				decrementnumInList();
-				return;
+
 			}
 			else {
 				currentStudent = currentStudent.next;
@@ -78,6 +85,8 @@ public class MyLL {
 				previousStudent = previousStudent.next;
 			}
 		}
+
+		return tempStudent;
 	}
 
 	public void displayList() {
